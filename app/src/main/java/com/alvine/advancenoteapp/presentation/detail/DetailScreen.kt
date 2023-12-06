@@ -48,7 +48,7 @@ fun DetailScreen(
     DetailScreen(
         modifier =modifier,
         isUpdatingNote = state.isUpdatingNote,
-        isFormNotBlank = state.isUpdatingNote,
+        isFormNotBlank = viewModel.isFormNotBlank,
         title = state.title,
         content = state.content,
         isBookMark = state.isBookMark,
@@ -59,7 +59,7 @@ fun DetailScreen(
             viewModel.addOrUpdateNote()
             navigateUp()
         },
-//        onNavigate = navigateUp
+//        onNavigate = navigateUp()
 
     ) {
 
@@ -80,7 +80,8 @@ private fun DetailScreen(
     onContentChange:(String) ->Unit,
     onBookMarkChange:(Boolean) ->Unit,
     onBtnClick:() ->Unit,
-    onNavigate:() ->Unit
+    onNavigate:() ->Unit,
+
 ) {
 
     Column(
