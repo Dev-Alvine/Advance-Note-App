@@ -37,7 +37,7 @@ import com.alvine.advancenoteapp.state.ScreenViewState
 fun HomeScreen(
     modifier: Modifier,
     state: HomeState,
-    onBookMarkChange:(Boolean) ->Unit,
+    onBookMarkChange:(note:Note) ->Unit,
     onDeleteNote: (Long) -> Unit,
     onNoteClicked: (Long) -> Unit
 ) {
@@ -66,7 +66,7 @@ fun HomeScreen(
 @Composable
 private fun HomeDetail(
     notes:List<Note>,
-    onBookMarkChange: (Boolean) -> Unit,
+    onBookMarkChange: (note:Note) -> Unit,
     onNoteClicked:(Long) -> Unit,
     onDeleteNote:(Long) -> Unit,
     modifier:Modifier
@@ -95,7 +95,7 @@ private fun HomeDetail(
 fun NoteCard(
     index:Int,
     note: Note,
-    onBookMarkChange: (Boolean) -> Unit,
+    onBookMarkChange: (note:Note) -> Unit,
     onNoteClicked:(Long) -> Unit,
     onDeleteNote:(Long) -> Unit,
 
@@ -155,7 +155,7 @@ fun NoteCard(
                 IconButton(onClick = {onDeleteNote(note.id)}) {
                     Icon(imageVector = Icons.Default.Delete, contentDescription = null)
 
-                    IconButton(onClick = {onBookMarkChange(note.isBookedMarked)}) {
+                    IconButton(onClick = {onBookMarkChange(note)}) {
                     Icon(imageVector = icon, contentDescription = null)
 
                 }

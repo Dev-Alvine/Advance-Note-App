@@ -39,7 +39,7 @@ fun NoteNavigation(
           HomeScreen(
               modifier=modifier,
               state = state,
-              onBookMarkChange = homeViewModel ::onBookedMarkedChange,
+              onBookMarkChange =homeViewModel::onBookedMarkedChange,
               onDeleteNote = homeViewModel::deleteNote
           ) {
               navHostController.navigateToSingleTop(

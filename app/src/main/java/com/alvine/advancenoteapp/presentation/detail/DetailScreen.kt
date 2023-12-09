@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.alvine.advancenoteapp.data.local.model.Note
 
 @Composable
 fun DetailScreen(
@@ -90,7 +91,7 @@ private fun DetailScreen(
       TopSection(
           title = title,
           isBookMark =isBookMark,
-          onBookMarkChange =onBookMarkChange,
+          onBookMarkChange = onBookMarkChange,
           onTitleChange =onTitleChange,
           onNavigate = onNavigate
       )
@@ -128,7 +129,7 @@ fun TopSection(
     modifier:Modifier=Modifier,
     title: String,
     isBookMark: Boolean,
-    onBookMarkChange:(Boolean) ->Unit,
+    onBookMarkChange: (Boolean) -> Unit,
     onTitleChange: (String) -> Unit,
     onNavigate: () -> Unit
 ) {

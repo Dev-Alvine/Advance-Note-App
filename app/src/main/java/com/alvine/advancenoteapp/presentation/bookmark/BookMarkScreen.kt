@@ -16,7 +16,7 @@ import com.alvine.advancenoteapp.state.ScreenViewState
 @Composable
 fun BookMarkScreen(
     state: BookMarkState,
-    onBookMarkChange:(note: Note) ->Unit,
+    onBookMarkChange:(note:Note) ->Unit,
     onDeleteNote:(Long) ->Unit,
     modifier: Modifier,
     onNoteClicked:(Long) ->Unit,

@@ -47,8 +47,10 @@ class HomeViewModel @Inject constructor(
         deleteNoteUseCase(id)
     }
 
-    suspend fun onBookedMarkedChange(note:Note) {
-        updateNoteUseCase(note.copy(isBookedMarked = !note.isBookedMarked))
+      fun onBookedMarkedChange(note:Note) {
+       viewModelScope.launch {
+           updateNoteUseCase(note.copy(isBookedMarked = !note.isBookedMarked))
+       }
     }
     
 }
