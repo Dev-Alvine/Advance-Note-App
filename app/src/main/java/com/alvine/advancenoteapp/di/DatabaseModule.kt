@@ -2,7 +2,6 @@ package com.alvine.advancenoteapp.di
 
 import android.content.Context
 import androidx.room.Room
-import com.alvine.advancenoteapp.data.local.model.Note
 import com.alvine.advancenoteapp.data.local.model.NoteDao
 import com.alvine.advancenoteapp.data.local.model.NoteDatabase
 import dagger.Module
@@ -18,18 +17,17 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun providesNoteDao(dao:NoteDatabase):NoteDao{
-        return dao.noteDao
+    fun providesNoteDao(database: NoteDatabase): NoteDao {
+        return database.noteDao
     }
 
     @Provides
     @Singleton
-    fun providesNoteDatabase(
+    fun provideDatabase(
         @ApplicationContext context: Context
-    ):NoteDatabase =Room.databaseBuilder(
+    ): NoteDatabase =Room.databaseBuilder(
         context,
         NoteDatabase::class.java,
-        "notes_db"
-    )
-        .build()
+        "note_db"
+    ).build()
 }
