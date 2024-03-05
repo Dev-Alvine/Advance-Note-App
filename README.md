@@ -10,5 +10,5 @@
 ### handles getting and mutating data from needed sources
 ## domain
 ### handles encasing business logic for reuse
-##presentation
-###handles displaying data on the device
+## presentation
+### handles displaying data on the device
